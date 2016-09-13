@@ -1,17 +1,18 @@
 s = 'azcbobobegghakl'
-stringsList = []
-letters = ''
+prevLetter = ''
+currentString = s[0]
+longestString = ''
 
-for i in range(len(s)-1):
-    if s[i+1] >= s[i]:
-        letters = letters + s[i]
-        stringsList.append(letters)
+for position, letter in enumerate(s):
+    if prevLetter <= letter:
+        currentString += letter
+    else: 
+        if len(currentString) > len(longestString):
+            longestString = currentString
+        currentString = letter
+    prevLetter = letter
 
-    elif s[i+1] < s[i] and s[i] > s[i-1]:
-        letters = letters + s[i]
-        stringsList.append(letters)
+if len(currentString) > len(longestString):
+    longestString = currentString
 
-    else:
-        letters = ''
-
-print(stringsList)
+print('Longest substring in alphabetical order is:', longestString)
