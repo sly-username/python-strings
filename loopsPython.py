@@ -1,6 +1,6 @@
-s = 'azcbobobegghakl'
+s = 'wydldoluvopdyvwvloxdo'
 prevLetter = ''
-currentString = s[0]
+currentString = ''
 longestString = ''
 
 for position, letter in enumerate(s):
